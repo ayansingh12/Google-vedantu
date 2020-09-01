@@ -140,7 +140,7 @@ class Bot(discord.Client):
         self.embed.add_field(name="**Answer II**", value="0.0", inline=False)
         self.embed.add_field(name="**Answer III**", value="0.0", inline=False)
         self.embed.add_field(name="Best Answer",value="<a:loading:695158657565851658>")
-        self.embed.set_footer(text=f"Daman saini#0605", \
+        self.embed.set_footer(text=f"Ayan singh#3930", \
             icon_url="https://cdn.discordapp.com/emojis/65144659163194133.gif?v=1")
         #await self.bot.add_reaction(embed,':spy:')
 
@@ -167,19 +167,19 @@ class Bot(discord.Client):
 
         if highest > 0:
             if answer == 1:
-                one_check = ":white_check_mark:"
+                one_check = ":Red_check_mark:"
             else:
                 one_check=":x:"
             if answer ==1:
                 best_answer=":one: :tada:"
             if answer == 2:
-                two_check = ":white_check_mark:"
+                two_check = ": Green_check_mark:"
             else:
                 two_check=":x:"
             if answer==2:
                 best_answer=":two: :tada:"
             if answer == 3:
-                three_check = ":white_check_mark:"
+                three_check = ": Yellow_check_mark:"
             else:
                 three_check=":x:"
             if answer ==3:
@@ -193,9 +193,9 @@ class Bot(discord.Client):
 #             if answer == 3:
 #                 three_check = ":x:"            
  
-        self.embed.set_field_at(0, name="**Answer I**", value="{0}{1}".format(lst_scores[0], one_check))
-        self.embed.set_field_at(1, name="**Answer II**", value="{0}{1}".format(lst_scores[1], two_check))
-        self.embed.set_field_at(2, name="**Answer III**", value="{0}{1}".format(lst_scores[2],three_check))
+        self.embed.set_field_at(0, name="**Kill I**", value="{0}{1}".format(lst_scores[0], one_check))
+        self.embed.set_field_at(1, name="**Kill II**", value="{0}{1}".format(lst_scores[1], two_check))
+        self.embed.set_field_at(2, name="**Kill III**", value="{0}{1}".format(lst_scores[2],three_check))
         self.embed.set_field_at(3,name="Best Answer",value=best_answer)
 
         if self.embed_msg is not None:
@@ -210,7 +210,7 @@ class Bot(discord.Client):
 
         await self.clear_results()
         await self.update_embeds()
-        await self.change_presence(activity=discord.Game(name='Vedantu is Live with daman saini#0605...'))
+        await self.change_presence(activity=discord.Game(name='Vedantu is Live with Ayan singh#3930...'))
 
     async def on_message(self, message):
 
@@ -226,7 +226,7 @@ class Bot(discord.Client):
                 await self.update_embeds()
                 self.embed_msg = \
                     await message.channel.send('',embed=self.embed)
-                await self.embed_msg.add_reaction("✅")
+                await self.embed_msg.add_reaction("✔️")
                 #await self.embed_msg.add_reaction("âœ”")
                 await self.embed_msg.add_reaction("❎")
                 #await self.embed_msg.add_reaction("âœ”")
@@ -241,7 +241,7 @@ class Bot(discord.Client):
            embed = discord.Embed(title="**__Vedantu__**", description="**Private Bot**", color=0x0000FF)
            embed.add_field(name="__Game__", value="*Vedantu Live*", inline=False)
            embed.add_field(name="__Bot Command__", value="v", inline=False)
-           embed.add_field(name="__Made By__daman saini#0605", value="*Anonymous*", inline=False)
+           embed.add_field(name="__Made By__ayan singh#3930", value="*Anonymous*", inline=False)
            await message.channel.send(embed=embed)
 
         # process votes
@@ -268,7 +268,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     upd_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.create_task(bot.start('NzQ5NTE1NjkxOTI4OTc3NDA4.X0tG4g.3x5lJlsrLulNoo4ABNlFY62mNv4'))
+    loop.create_task(bot.start('NzUwMzMxOTM4NjQ0MTY0NjU5.X04_Eg.znS3LKTg1ifQg6-X-wxOOgOJxNo'))
     loop.run_forever()
 
 
@@ -277,7 +277,7 @@ def selfbot_process(update_event, answer_scores):
     selfbot = SelfBot(update_event, answer_scores)
 
     loop = asyncio.get_event_loop()
-    loop.create_task(selfbot.start('.NzIyNDc5ODMwMjQ3MDE0NTEx.X0aB4g.6N5AurtQTz2n3RViyuVngqlAcM0',
+    loop.create_task(selfbot.start('.NzI1MTY5MzExMTkwMDg5NzI5.X0tuKQ.sJOTX4THruXxOhnvJpHHxBDVBJo',
                                    bot=False))
     loop.run_forever()
 
